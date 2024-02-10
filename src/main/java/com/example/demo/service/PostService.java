@@ -17,12 +17,13 @@ public class PostService {
     }
 
     {
-        posts.add(new Post("post 1", new Date()));
-        posts.add(new Post("post 2", new Date()));
-        posts.add(new Post("post 3",new Date()));
+        posts.add(new Post(1L,"123post ", new Date()));
+        posts.add(new Post(2L,"1234234", new Date()));
+        posts.add(new Post(3L,"posodop",new Date()));
     }
 
     public void create(String text) {
-        posts.add(new Post(text, new Date()));
+        long newId = posts.size() - 1;
+        posts.add(new Post(newId,text, new Date()));
     }
 }
