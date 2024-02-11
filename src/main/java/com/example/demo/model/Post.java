@@ -1,14 +1,17 @@
 package com.example.demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+
 import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 public class Post implements Serializable {
+    @Column(nullable = false)
     private int likes;
+    @Temporal(TemporalType.TIMESTAMP)
+    @CreationTimestamp
     private Date creationDate;
 
     private String text;
